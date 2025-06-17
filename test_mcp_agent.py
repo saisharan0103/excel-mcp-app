@@ -43,11 +43,7 @@ def agent(prompt: str):
     model = genai.GenerativeModel(MODEL_ID)
     sys.stderr.write("🧠 Gemini is parsing your instruction...\n")
 
-    schema_instruction = (
-        "Return ONLY this JSON:\n"
-        '{"data": [[1,2],[3,4]], "sheet_name": "Sheet1"}\n'
-        f'for this instruction:\n"""{prompt}"""'
-    )
+    
     schema_instruction = (
         "Return ONLY valid JSON like this:\n"
         '{"data": [[1,2],[3,4]], "sheet_name": "Sheet1"}\n'
