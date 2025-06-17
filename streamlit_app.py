@@ -24,7 +24,7 @@ def run_agent(prompt: str):
     schema_instruction = (
         "Return ONLY this JSON:\n"
         '{"data": [[1,2],[3,4]], "sheet_name": "Sheet1"}\n'
-        f'for this instruction:\n"""{prompt}"""'
+        f'Now generate the correct JSON that matches this instruction:\n"""{prompt}"""'
     )
 
     response = model.generate_content(schema_instruction)
